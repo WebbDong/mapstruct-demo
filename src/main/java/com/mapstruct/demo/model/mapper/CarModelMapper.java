@@ -67,6 +67,8 @@ public interface CarModelMapper {
     @IterableMapping(numberFormat = "$#.00")
     List<String> prices(List<Double> prices);
 
+    List<CarDto> carDtoList(List<Car> carList);
+
     Set<String> integerSetToStringSet(Set<Integer> integers);
 
     @MapMapping(valueDateFormat = "yyyy年MM月dd日 HH:mm:ss")

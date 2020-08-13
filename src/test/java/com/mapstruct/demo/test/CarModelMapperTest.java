@@ -70,6 +70,23 @@ public class CarModelMapperTest {
     }
 
     @Test
+    public void testCarDtoList() {
+        List<Car> carList = new ArrayList<>();
+        carList.add(Car.builder()
+                .brand("BMW")
+                .numberOfSeats(4)
+                .price(600000.00)
+                .build());
+        carList.add(Car.builder()
+                .brand("Ferrari")
+                .numberOfSeats(4)
+                .price(60000000.00)
+                .build());
+        List<CarDto> carDtoList = CarModelMapper.INSTANCE.carDtoList(carList);
+        log.info("{}", carDtoList);
+    }
+
+    @Test
     public void testLongDateMapToStringStringMap() {
         Map<Long, Date> map = new HashMap<>();
         map.put(10L, new Date());
